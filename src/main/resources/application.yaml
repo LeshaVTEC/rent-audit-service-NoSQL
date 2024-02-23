@@ -1,0 +1,29 @@
+spring:
+  data:
+    mongodb:
+      host: 127.0.0.1
+      port: 27017
+      database: local
+      user: root
+  jackson:
+    deserialization:
+      read-unknown-enum-values-as-null: true
+server:
+  port: 8085
+  servlet:
+    context-path: "/realty/api"
+
+app:
+  jwt:
+    secret: QAZ1ZjAzNjQtMzViZi00MDRjLTljZjQtNjNjYWIyZTU5ZDYz
+    issuer: org.alexey
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health, prometheus, metrics, info, env, liquibase
+  endpoint:
+    health:
+      probes:
+        enabled: true
